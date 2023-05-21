@@ -13,7 +13,7 @@ function MiPerfil() {
                 <div className='col-8'>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button class="btn btn-outline-primary me-md-2" type="button">Cancelar</button>
-                        <button class="btn btn-primary" type="button">Guardar</button>
+                        <button class="btn btn-primary" style={{background:'#6750A4'}} type="button">Guardar</button>
                     </div>
                 </div>
             </div>

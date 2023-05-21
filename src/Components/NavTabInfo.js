@@ -44,7 +44,7 @@ const NavTabInfo = (props) => {
     };
 
     return (
-        <main>
+        <main style={{ background: '#FEF7FF' }}>
             <nav>
                 <div className="nav nav-tabs" id="nav-tab" role="tablist">
                     <button className="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Datos de Usuario</button>
@@ -80,44 +80,48 @@ const NavTabInfo = (props) => {
 
                             </div>
                         </div>
+                        <br></br>
                     </div>
                 </div>
                 <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                    <div className='row  mt-3'>
-                        <div className='col-6'>
-                            <div className='row'>
+                    <div className='container'>
+                        <div className='row mt-3'>
+                            <div className='col-6'>
+                                <div className='row'>
+                                    <Select
+                                        options={universidades}
+                                        value={selectedUniversidades}
+                                        isMulti
+                                        placeholder="Universidades"
+                                        onChange={handleSelectChangeUniversidades}
+                                    />
+                                </div>
+
+                                <div className='row mt-3'>
+                                    <Select
+                                        options={carreras}
+                                        value={selectedCarreras}
+                                        isMulti
+                                        placeholder="Carreras"
+                                        onChange={handleSelectChangeCarreras}
+                                    />
+                                </div>
+                            </div>
+                            <div className='col-1'>
+                                <div class="vr h-100"></div>
+
+                            </div>
+                            <div className='col-5'>
                                 <Select
-                                    options={universidades}
-                                    value={selectedUniversidades}
+                                    options={cursos}
+                                    value={selectCursos}
                                     isMulti
-                                    placeholder="Universidades"
-                                    onChange={handleSelectChangeUniversidades}
+                                    placeholder="Cursos"
+                                    onChange={handleSelectChangeCursos}
                                 />
                             </div>
-
-                            <div className='row mt-3'>
-                                <Select
-                                    options={carreras}
-                                    value={selectedCarreras}
-                                    isMulti
-                                    placeholder="Carreras"
-                                    onChange={handleSelectChangeCarreras}
-                                />
-                            </div>
                         </div>
-                        <div className='col-1'>
-                            <div class="vr h-100"></div>
-
-                        </div>
-                        <div className='col-5'>
-                            <Select
-                                options={cursos}
-                                value={selectCursos}
-                                isMulti
-                                placeholder="Cursos"
-                                onChange={handleSelectChangeCursos}
-                            />
-                        </div>
+                        <br></br>
                     </div>
                 </div>
                 <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
@@ -136,6 +140,7 @@ const NavTabInfo = (props) => {
                                 <label for="presentationInput">Presentacion</label>
                             </div>
                         </div>
+                        <br></br>
                     </div>
                 </div>
             </div>
