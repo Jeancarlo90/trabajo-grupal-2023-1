@@ -14,7 +14,7 @@ import MiPerfil from './Pages/MiPerfil';
 function App() {
   return (
     <BrowserRouter>
-      <NavBar></NavBar>
+      {/* <NavBar></NavBar> */}
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/miperfil' element={<MiPerfil />}></Route>

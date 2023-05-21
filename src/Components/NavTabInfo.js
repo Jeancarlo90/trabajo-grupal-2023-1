@@ -1,7 +1,47 @@
 import '../App.css'
-
+import Select from 'react-select';
+import React, { useState } from 'react';
 
 const NavTabInfo = (props) => {
+    const [selectCursos, setSelectedCursos] = useState([]);
+
+    const [selectedUniversidades, setSelectedUniversidades] = useState([]);
+
+    const [selectedCarreras, setSelectedCarreras] = useState([]);
+
+    const cursos = [
+        { value: 'p1', label: 'Programacion Video' },
+        { value: 'p2', label: 'Programacion Web' },
+        { value: 'p3', label: 'Programacion Orientada a Objetos' },
+        { value: 'p4', label: 'Intro a la programacion' },
+
+    ];
+
+    const universidades = [
+        { value: 'u1', label: 'Universidad de Lima' },
+        { value: 'u2', label: 'PUCP' },
+        { value: 'u3', label: 'UPC' },
+        { value: 'u4', label: 'UP' },
+
+    ];
+
+    const carreras = [
+        { value: 'c1', label: 'Ingenieria de sistemas' },
+        { value: 'c2', label: 'Ingenieria Industrial' },
+        { value: 'c3', label: 'Ingenieria Civil' },
+        { value: 'c4', label: 'Administracion' },
+
+    ];
+
+    const handleSelectChangeCursos = (selectedCursos) => {
+        setSelectedCursos(selectedCursos);
+    };
+    const handleSelectChangeUniversidades = (selectedOptions) => {
+        setSelectedUniversidades(selectedOptions);
+    };
+    const handleSelectChangeCarreras = (selectedOptions) => {
+        setSelectedCarreras(selectedOptions);
+    };
 
     return (
         <main>
@@ -42,7 +82,44 @@ const NavTabInfo = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+                <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div className='row  mt-3'>
+                        <div className='col-6'>
+                            <div className='row'>
+                                <Select
+                                    options={universidades}
+                                    value={selectedUniversidades}
+                                    isMulti
+                                    placeholder="Universidades"
+                                    onChange={handleSelectChangeUniversidades}
+                                />
+                            </div>
+
+                            <div className='row mt-3'>
+                                <Select
+                                    options={carreras}
+                                    value={selectedCarreras}
+                                    isMulti
+                                    placeholder="Carreras"
+                                    onChange={handleSelectChangeCarreras}
+                                />
+                            </div>
+                        </div>
+                        <div className='col-1'>
+                            <div class="vr h-100"></div>
+
+                        </div>
+                        <div className='col-5'>
+                            <Select
+                                options={cursos}
+                                value={selectCursos}
+                                isMulti
+                                placeholder="Cursos"
+                                onChange={handleSelectChangeCursos}
+                            />
+                        </div>
+                    </div>
+                </div>
                 <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
 
                     <div className='container'>

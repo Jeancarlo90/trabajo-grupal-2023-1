@@ -2,10 +2,21 @@ import '../App.css'
 import NavTabInfo from '../Components/NavTabInfo';
 
 function MiPerfil() {
+
+    var role = 'ALUMNO';
     return (
         <main className='container '>
-            <h3> Mi Perfil</h3>
-
+            <div className='row'>
+                <div className='col-4'>
+                    <h3> Mi Perfil</h3>
+                </div>
+                <div className='col-8'>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-outline-primary me-md-2" type="button">Cancelar</button>
+                        <button class="btn btn-primary" type="button">Guardar</button>
+                    </div>
+                </div>
+            </div>
             <hr></hr>
 
             <h6>Informacion Personal</h6>
@@ -35,10 +46,24 @@ function MiPerfil() {
                             <input type="text" className="form-control" id="rolInput" placeholder=""></input>
                             <label for="rolInput">Rol</label>
                         </div>
+                        {role === "PROFESOR"
+                            ?
+                            <div className=" col-4">
+                                <div className="form-floating">
+                                    <select className="form-select" id="floatingSelect" aria-label="Floating label select example">d
+                                        <option value="1">Bachiller</option>
+                                        <option value="2">Magister</option>
+                                        <option value="3">Doctor</option>
+                                    </select>
+                                    <label for="floatingSelect">Maximo grado alcanzado</label>
+                                </div>
+                            </div>
 
-                        <div className=" col-4">
+                            : <div className=" col-4">
 
-                        </div>
+                            </div>
+                        }
+
 
                         <div className="form-floating col-4">
                             <input type="text" className="form-control" id="numberInput" placeholder=""></input>
