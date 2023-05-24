@@ -50,7 +50,7 @@ function MiPerfil() {
                             ?
                             <div className=" col-4">
                                 <div className="form-floating">
-                                    <select className="form-select" id="floatingSelect" aria-label="Floating label select example">d
+                                    <select className="form-select" id="floatingSelect" aria-label="Floating label select example">
                                         <option value="1">Bachiller</option>
                                         <option value="2">Magister</option>
                                         <option value="3">Doctor</option>
